@@ -1,15 +1,17 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import now from '~build/time';
+</script>
 
 <template>
-  <div>
-    <main class="main pt-4vh lt-lg:pt-4vh pb-8vh">
-      <a href="/" class="block select-none cursor-pointer pb-4vh">
+  <div class="min-h-screen flex flex-col">
+    <main class="main pt-4vh lt-lg:pt-4vh pb-8vh flex-grow-1">
+      <a href="/" class="block select-none cursor-pointer">
         <!-- prettier-ignore -->
         <h1 class="inline-block font-quicksand text-3xl font-700 hover:underline underline-dotted">Clipboard Inspector</h1>
       </a>
-      <Inspector></Inspector>
+      <Inspector class="mt-4vh"></Inspector>
     </main>
-    <footer class="main pb-8vh select-none">
+    <footer class="main pb-4vh select-none">
       <div font-sm text-base-400>
         <a
           href="https://github.com/yjl9903/clipboard-inspector"
@@ -20,9 +22,9 @@
         <span> © 2023</span>
       </div>
       <div font-sm text-base-400>
-        Rendered at {now.toLocaleString('zh-CN', { timeZone: 'Asia/ShangHai' })}
+        Rendered at {{ now.toLocaleString('zh-CN', { timeZone: 'Asia/ShangHai' }) }}
       </div>
-      <div font-sm text-base-400>Powered by Astro</div>
+      <div font-sm text-base-400>Powered by Vue</div>
       <div font-sm text-base-400>Hosted on Cloudflare Pages</div>
     </footer>
   </div>

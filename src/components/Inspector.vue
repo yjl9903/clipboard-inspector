@@ -1,82 +1,73 @@
 <script setup lang="ts">
-import prettify from 'html-format';
-import { ref } from 'vue';
+import { type ClipboardResult, readFromClipboardEvent, readFromClipboardItems } from '../clipboard';
 
-const types = ref<readonly string[]>([]);
-const texts = ref<{ key: string; value: string }[]>([]);
-const files = ref<File[]>([]);
+const result = ref<ClipboardResult | undefined>(undefined);
 
-const onPaste = (ev: ClipboardEvent) => {
-  console.log(ev.clipboardData, ev.clipboardData?.files, ev.clipboardData?.types);
-  if (ev.clipboardData?.types) {
-    types.value = ev.clipboardData?.types;
-  } else {
-    types.value = [];
-  }
-  texts.value = [];
-
-  for (const type of types.value) {
-    if (type.startsWith('text/') || type.startsWith('application/') || type.startsWith('docx/')) {
-      let value = ev.clipboardData?.getData(type) ?? '';
-      if (type === 'text/html') {
-        value = prettify(value);
-      }
-      texts.value.push({ key: type, value });
-    }
-  }
-
-  console.log('Files', ev.clipboardData?.getData('Files'));
-  files.value = [...(ev.clipboardData?.files ?? [])];
-
-  const { dom, imgs } = parseHTML(ev.clipboardData?.getData('text/html') ?? '');
-  console.log(dom, imgs);
+const onUseAPI = async () => {
+  const clipboard = await navigator.clipboard.read();
+  result.value = await readFromClipboardItems(clipboard);
 };
 
-function parseHTML(text: string) {
-  const parser = new DOMParser();
-  const dom = parser.parseFromString(text, 'text/html');
-  const imgs = Array.from(dom.querySelectorAll('img'));
-  return { dom, imgs };
-}
+const onPaste = async (ev: ClipboardEvent) => {
+  result.value = readFromClipboardEvent(ev);
+};
+
+const onReset = () => {
+  result.value = undefined;
+};
+
+onMounted(() => {
+  document.addEventListener('paste', onPaste);
+
+  return () => {
+    document.removeEventListener('paste', onPaste);
+  };
+});
 </script>
 
 <template>
-  <div class="rounded-md w-full">
-    <div class="font-bold mb-4">Editor</div>
-    <div
-      contenteditable="true"
-      class="editor w-full overflow-auto text-left rounded-md"
-      @paste="onPaste"
-    >
-      12312312
-    </div>
-  </div>
+  <div class="w-full font-sans">
+    <div class="border shadow-box rounded-md p-4 mb-8">
+      <div v-if="!result" class="font-bold text-xl mb-4 select-none">Get Started</div>
+      <div v-else class="mb-4">
+        <span class="font-bold text-xl select-none">Your clipboard</span>
+        <span
+          class="ml-4 inline-block bg-amber-200 hover:bg-op-50 px-2 py-[2px] rounded-md select-none cursor-pointer outline-none"
+          @click="onReset"
+          >Reset</span
+        >
+      </div>
 
-  <div class="border-0 border-t-1 border-black border-solid mt-8 mb-8"></div>
-
-  <div class="mb-4">
-    <div>
-      <span class="font-bold">Types:</span>
-      <span v-for="type in types" class="type">{{ type }}</span>
+      <ul v-if="!result" class="list-disc pl-4 space-y-2">
+        <li>
+          Press
+          <span
+            class="inline-block bg-sky-200 hover:bg-op-80 px-2 py-1 rounded-md select-none cursor-pointer outline-none"
+            @click="onUseAPI"
+            >Paste using the Clipboard API</span
+          >
+          if your browser supports the Asynchronous Clipboard API
+        </li>
+        <li>
+          Paste with the
+          <span class="font-mono underline underline-dotted underline-offset-4">Ctrl / ⌘ + V</span>
+          keyboard shortcut
+        </li>
+        <li>
+          Paste here
+          <div
+            contenteditable="true"
+            @paste.prevent.stop="onPaste"
+            class="p-2 overflow-auto max-w-[300px] border-1 border-solid border-base outline-main-300 rounded-md"
+          ></div>
+        </li>
+      </ul>
+      <div v-else class="p-4 border rounded-md max-h-[40vh] overflow-auto">
+        <div v-html="result.html"></div>
+      </div>
     </div>
-  </div>
 
-  <div class="mb-4">
-    <div>
-      <span class="font-bold">Files:</span>
-      <span v-for="file in files" class="mr-2">{{ file.name }}</span>
-    </div>
-  </div>
-
-  <div v-for="{ key, value } in texts" class="text-left w-full mb-4">
-    <div class="font-bold mb-2">{{ key }}</div>
-    <div
-      v-if="value"
-      class="p-2 border border-black border-solid rounded-md h-[600px] overflow-auto"
-    >
-      <pre><code>{{ value }}</code></pre>
-    </div>
-    <div v-else>Empty</div>
+    <Viewer v-if="result" :clipboard="result"></Viewer>
   </div>
 </template>
 

@@ -8,5 +8,6 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Inspector: typeof import('./components/Inspector.vue')['default']
+    Viewer: typeof import('./components/Viewer.vue')['default']
   }
 }
