@@ -9,7 +9,8 @@ declare module 'vue' {
   export interface GlobalComponents {
     Ace: typeof import('./components/render/Ace.vue')['default']
     Inspector: typeof import('./components/Inspector.vue')['default']
-    Plain: typeof import('./components/render/Plain.vue')['default']
+    Plain: typeof import('./components/render/PlainText.vue')['default']
+    PlainText: typeof import('./components/render/PlainText.vue')['default']
     Viewer: typeof import('./components/Viewer.vue')['default']
   }
 }

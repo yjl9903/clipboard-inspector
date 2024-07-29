@@ -2,7 +2,7 @@
 import { type ClipboardResult } from '../clipboard';
 
 import Ace from './render/Ace.vue';
-import Plain from './render/Plain.vue';
+import Plain from './render/PlainText.vue';
 
 const props = defineProps<{ clipboard: ClipboardResult }>();
 
