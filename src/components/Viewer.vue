@@ -63,6 +63,12 @@ const base64 = (file: File) => {
         :href="`#${type}`"
         >{{ type }}</a
       >
+      <a
+        v-for="file in clipboard.files"
+        class="inline-block select-none cursor-pointer text-lg px-2 text-base-700 bg-neutral-200 hover:bg-neutral-300 rounded-lg"
+        :href="`#${file.name}`"
+        >{{ file.name }}</a
+      >
     </div>
 
     <table class="types w-full">
@@ -90,7 +96,7 @@ const base64 = (file: File) => {
           </td>
         </tr>
 
-        <tr v-for="(file, index) in clipboard.files" :class="['border-t-1']">
+        <tr v-for="(file, index) in clipboard.files" :id="file.name" :class="['border-t-1']">
           <td class="border-r-1">
             <span class="inline-block px-2 text-base-700 bg-neutral-200 rounded-lg">{{
               file.name
