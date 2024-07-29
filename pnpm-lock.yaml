@@ -15,6 +15,9 @@ importers:
         specifier: ^3.4.34
         version: 3.4.34(typescript@5.5.4)
     devDependencies:
+      '@onekuma/preset.css':
+        specifier: ^0.1.11
+        version: 0.1.11
       '@types/node':
         specifier: ^20.14.13
         version: 20.14.13
@@ -379,6 +382,10 @@ packages:
   '@nodelib/fs.walk@1.2.8':
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
+
+  '@onekuma/preset.css@0.1.11':
+    resolution: {integrity: sha512-BMkKJ6jy8jxfuGqAMHtCIVyVvkHpk6ynFlteYhfzPsyfZHCZ7MGoon7CTInNdBSYne49WuVqJBMX2wbG01pjlw==}
+    engines: {node: '>=v18.16.0'}
 
   '@polka/url@1.0.0-next.25':
     resolution: {integrity: sha512-j7P6Rgr3mmtdkeDGTe0E/aYyWEWVtc5yFXtHCRHs28/jptDEWfaVOc5T7cblqy1XKPPfCxJc/8DwQ5YgLOZOVQ==}
@@ -1727,6 +1734,8 @@ snapshots:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.17.1
+
+  '@onekuma/preset.css@0.1.11': {}
 
   '@polka/url@1.0.0-next.25': {}
 
