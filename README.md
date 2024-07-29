@@ -1,5 +1,15 @@
-# Vue 3 + TypeScript + Vite
+# starter-vue
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Get started
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+Just click the `Use this template` button.
+
+After using the template to create your blank project, the [Cleanup Template workflow](./.github/workflows/cleanup.yml) will be triggered to override or remove any template-specific configurations, such as the repo name, username, etc.
+
+> **Notice**
+>
+> If you can still **see this message in your generated repo**, it means the **cleanup has not been done** properly, and just wait for it.
+
+## License
+
+MIT License © 2024 [XLor](https://github.com/yjl9903)

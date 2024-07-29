@@ -1,22 +1,32 @@
 {
-  "name": "test-paste",
+  "name": "starter-vue",
   "private": true,
-  "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "build": "vite build",
     "dev": "vite",
-    "build": "vue-tsc -b && vite build",
-    "preview": "vite preview"
+    "format": "prettier --write src/**/*.{ts,vue} --ignore-path .gitignore",
+    "preview": "vite preview",
+    "typecheck": "vue-tsc --noEmit -p package.json --resolveJsonModule --skipLibCheck"
   },
   "dependencies": {
     "html-format": "^1.1.7",
-    "vue": "^3.4.31"
+    "vue": "^3.4.34"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^5.0.5",
-    "typescript": "^5.2.2",
+    "@types/node": "^20.14.13",
+    "@unocss/reset": "^0.61.6",
+    "@vitejs/plugin-vue": "^5.1.1",
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.4",
     "unocss": "^0.61.6",
-    "vite": "^5.3.4",
-    "vue-tsc": "^2.0.24"
-  }
+    "unplugin-analytics": "^0.0.11",
+    "unplugin-auto-import": "0.18.2",
+    "unplugin-info": "^1.1.0",
+    "unplugin-vue-components": "^0.27.3",
+    "vite": "^5.3.5",
+    "vitest": "^2.0.4",
+    "vue-tsc": "^2.0.29"
+  },
+  "packageManager": "pnpm@9.6.0"
 }
