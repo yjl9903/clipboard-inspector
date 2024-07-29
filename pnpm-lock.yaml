@@ -8,12 +8,18 @@ importers:
 
   .:
     dependencies:
+      ace-builds:
+        specifier: ^1.35.4
+        version: 1.35.4
       html-format:
         specifier: ^1.1.7
         version: 1.1.7
       vue:
         specifier: ^3.4.34
         version: 3.4.34(typescript@5.5.4)
+      vue3-ace-editor:
+        specifier: ^2.2.4
+        version: 2.2.4(ace-builds@1.35.4)(vue@3.4.34(typescript@5.5.4))
     devDependencies:
       '@onekuma/preset.css':
         specifier: ^0.1.11
@@ -649,6 +655,9 @@ packages:
   '@vue/shared@3.4.34':
     resolution: {integrity: sha512-x5LmiRLpRsd9KTjAB8MPKf0CDPMcuItjP0gbNqFCIgL1I8iYp4zglhj9w9FPCdIbHG2M91RVeIbArFfFTz9I3A==}
 
+  ace-builds@1.35.4:
+    resolution: {integrity: sha512-r0KQclhZ/uk5a4zOqRYQkJuQuu4vFMiA6VTj54Tk4nI1TUR3iEMMppZkWbNoWEgWwv4ciDloObb9Rf4V55Qgjw==}
+
   acorn@8.12.1:
     resolution: {integrity: sha512-tcpGyI9zbizT9JbV6oYE477V6mTlXvvi0T0G3SNIYE2apm/G5huBa1+K89VGeovbg+jycCrfhl3ADxErOuO6Jg==}
     engines: {node: '>=0.4.0'}
@@ -1091,6 +1100,9 @@ packages:
     resolution: {integrity: sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==}
     engines: {node: '>=8.10.0'}
 
+  resize-observer-polyfill@1.5.1:
+    resolution: {integrity: sha512-LwZrotdHOo12nQuZlHEmtuXdqGoOD0OhaxopaNFxWzInpEgaLWoVuAMbTzixuosCx2nEG58ngzW3vxdWoxIgdg==}
+
   reusify@1.0.4:
     resolution: {integrity: sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==}
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
@@ -1369,6 +1381,12 @@ packages:
     hasBin: true
     peerDependencies:
       typescript: '>=5.0.0'
+
+  vue3-ace-editor@2.2.4:
+    resolution: {integrity: sha512-FZkEyfpbH068BwjhMyNROxfEI8135Sc+x8ouxkMdCNkuj/Tuw83VP/gStFQqZHqljyX9/VfMTCdTqtOnJZGN8g==}
+    peerDependencies:
+      ace-builds: '*'
+      vue: ^3
 
   vue@3.4.34:
     resolution: {integrity: sha512-VZze05HWlA3ItreQ/ka7Sx7PoD0/3St8FEiSlSTVgb6l4hL+RjtP2/8g5WQBzZgyf8WG2f+g1bXzC7zggLhAJA==}
@@ -2078,6 +2096,8 @@ snapshots:
 
   '@vue/shared@3.4.34': {}
 
+  ace-builds@1.35.4: {}
+
   acorn@8.12.1: {}
 
   ansi-styles@3.2.1:
@@ -2487,6 +2507,8 @@ snapshots:
     dependencies:
       picomatch: 2.3.1
 
+  resize-observer-polyfill@1.5.1: {}
+
   reusify@1.0.4: {}
 
   rollup@4.19.1:
@@ -2775,6 +2797,12 @@ snapshots:
       '@vue/language-core': 2.0.29(typescript@5.5.4)
       semver: 7.6.3
       typescript: 5.5.4
+
+  vue3-ace-editor@2.2.4(ace-builds@1.35.4)(vue@3.4.34(typescript@5.5.4)):
+    dependencies:
+      ace-builds: 1.35.4
+      resize-observer-polyfill: 1.5.1
+      vue: 3.4.34(typescript@5.5.4)
 
   vue@3.4.34(typescript@5.5.4):
     dependencies:

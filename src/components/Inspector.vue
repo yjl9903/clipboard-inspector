@@ -27,7 +27,7 @@ onMounted(() => {
 
 <template>
   <div class="w-full font-sans">
-    <div class="border shadow-box rounded-md p-4 mb-8">
+    <div class="border shadow-box rounded-md p-4 mb-16">
       <div v-if="!result" class="font-bold text-xl mb-4 select-none">Get Started</div>
       <div v-else class="mb-4">
         <span class="font-bold text-xl select-none">Your clipboard</span>

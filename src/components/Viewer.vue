@@ -1,7 +1,18 @@
 <script setup lang="ts">
 import { type ClipboardResult } from '../clipboard';
 
+import Ace from './render/Ace.vue';
+import Plain from './render/Plain.vue';
+
 const props = defineProps<{ clipboard: ClipboardResult }>();
+
+const isUseAce = (type: string) => {
+  if (type === 'text/html') return true;
+  if (type.startsWith('application/')) return true;
+  if (type.startsWith('docx/')) return true;
+  if (['vscode-editor-data'].includes(type)) return true;
+  return false;
+};
 
 // const onPaste = (ev: ClipboardEvent) => {
 //   console.log(ev.clipboardData, ev.clipboardData?.files, ev.clipboardData?.types);
@@ -49,22 +60,29 @@ const props = defineProps<{ clipboard: ClipboardResult }>();
       >
     </div>
 
-    <table class="types">
+    <table class="types w-full">
       <thead>
-        <tr class="border-b-3 border-neutral-300">
+        <tr class="border-b-3 border-neutral-300 select-none">
           <th class="text-left border-r-1 text-lg">Type</th>
-          <th class="text-left text-lg">Content</th>
+          <th class="text-left text-lg w-full">Content</th>
         </tr>
       </thead>
       <tbody>
         <tr
           v-for="({ type, content }, index) in clipboard.items"
+          :id="type"
           :class="[index > 0 && 'border-t-1']"
         >
           <td class="border-r-1">
-            <span :id="type">{{ type }}</span>
+            <span class="inline-block px-2 text-base-700 bg-neutral-200 rounded-lg">{{
+              type
+            }}</span>
           </td>
-          <td>{{ content }}</td>
+          <td class="w-full">
+            <div v-if="type === 'text/plain'"><Plain :content></Plain></div>
+            <div v-else-if="isUseAce(type)"><Ace :type :content></Ace></div>
+            <div v-else><Plain :content="content"></Plain></div>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -74,6 +92,6 @@ const props = defineProps<{ clipboard: ClipboardResult }>();
 <style>
 .types th,
 .types td {
-  --at-apply: text-left px-2 py-2;
+  --at-apply: text-left px-3 py-3;
 }
 </style>
