@@ -2,13 +2,7 @@
 
 [![CI](https://github.com/yjl9903/clipboard-inspector/actions/workflows/ci.yml/badge.svg)](https://github.com/yjl9903/clipboard-inspector/actions/workflows/ci.yml)
 
-## Installation
-
-```bash
-npm i clipboard-inspector
-```
-
-## Usage
+Inspect your Clipboard. Go to [inspector](https://clipboard-inspector.onekuma.cn/).
 
 ## License
 
