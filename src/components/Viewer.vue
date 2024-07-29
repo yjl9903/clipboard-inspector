@@ -14,6 +14,11 @@ const isUseAce = (type: string) => {
   return false;
 };
 
+const base64 = (file: File) => {
+  const url = URL.createObjectURL(file);
+  return url;
+};
+
 // const onPaste = (ev: ClipboardEvent) => {
 //   console.log(ev.clipboardData, ev.clipboardData?.files, ev.clipboardData?.types);
 //   if (ev.clipboardData?.types) {
@@ -82,6 +87,17 @@ const isUseAce = (type: string) => {
             <div v-if="type === 'text/plain'"><Plain :content></Plain></div>
             <div v-else-if="isUseAce(type)"><Ace :type :content></Ace></div>
             <div v-else><Plain :content="content"></Plain></div>
+          </td>
+        </tr>
+
+        <tr v-for="(file, index) in clipboard.files" :class="['border-t-1']">
+          <td class="border-r-1">
+            <span class="inline-block px-2 text-base-700 bg-neutral-200 rounded-lg">{{
+              file.name
+            }}</span>
+          </td>
+          <td class="w-full">
+            <img :src="base64(file)" :alt="file.name" />
           </td>
         </tr>
       </tbody>

@@ -15,14 +15,19 @@ export function readFromClipboardEvent(ev: ClipboardEvent): ClipboardResult | un
 
   const items = [];
   for (const type of ev.clipboardData.types) {
-    items.push({ type, content: ev.clipboardData.getData(type) });
+    if (type !== 'Files') {
+      items.push({ type, content: ev.clipboardData.getData(type) });
+    } else {
+    }
   }
+
+  const files = Array.from(ev.clipboardData.files);
 
   return {
     plain,
     html,
     items,
-    files: []
+    files
   };
 }
 
@@ -32,16 +37,24 @@ export async function readFromClipboardItems(clipboard: ClipboardItems): Promise
   let plain: string = '';
   let html: string = '';
   const items = [];
+  const files = [];
 
   for (const item of clipboard) {
     for (const type of item.types) {
-      const content = await (await item.getType(type)).text();
-      if (type === 'text/plain') {
-        plain = content;
-      } else if (type === 'text/html') {
-        html = content;
+      const blob = await item.getType(type);
+      if (type.startsWith(`image/`)) {
+        console.log(item, blob);
+        const file = new File([blob], `image.${type.split('/').at(-1)}`, { type });
+        files.push(file);
+      } else {
+        const content = await blob.text();
+        if (type === 'text/plain') {
+          plain = content;
+        } else if (type === 'text/html') {
+          html = content;
+        }
+        items.push({ type, content });
       }
-      items.push({ type, content });
     }
   }
 
@@ -49,6 +62,6 @@ export async function readFromClipboardItems(clipboard: ClipboardItems): Promise
     plain,
     html,
     items,
-    files: []
+    files
   };
 }
