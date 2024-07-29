@@ -1,14 +1,14 @@
-# starter-vue
+# clipboard-inspector
 
-## Get started
+[![CI](https://github.com/yjl9903/clipboard-inspector/actions/workflows/ci.yml/badge.svg)](https://github.com/yjl9903/clipboard-inspector/actions/workflows/ci.yml)
 
-Just click the `Use this template` button.
+## Installation
 
-After using the template to create your blank project, the [Cleanup Template workflow](./.github/workflows/cleanup.yml) will be triggered to override or remove any template-specific configurations, such as the repo name, username, etc.
+```bash
+npm i clipboard-inspector
+```
 
-> **Notice**
->
-> If you can still **see this message in your generated repo**, it means the **cleanup has not been done** properly, and just wait for it.
+## Usage
 
 ## License
 
