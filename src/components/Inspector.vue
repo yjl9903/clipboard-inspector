@@ -63,7 +63,7 @@ onMounted(() => {
         </li>
       </ul>
       <div v-else class="p-4 border rounded-md max-h-[40vh] overflow-auto">
-        <div v-html="result.html"></div>
+        <div v-html="result.html || result.plain"></div>
       </div>
     </div>
 
