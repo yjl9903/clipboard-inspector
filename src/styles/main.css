@@ -10,16 +10,28 @@
 
   --c-brand: #3273dc;
   --c-brand-active: #3273dc;
+
+  /* --accent: 124, 58, 237; */
+  --accent: 0, 204, 170;
+  --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), /* #da62c4 30%, */ #08c, white 60%);
+
+  --color-bg-primary: #fcfcfc;
+  --color-bg-secondary: #fafafa;
 }
 
 html {
-  font-family: var(--font-family-base);
   font-size: 16px;
   font-weight: 400;
   color: var(--text-light-1);
+  background-color: var(--color-bg-primary);
+  --at-apply: font-sans;
 }
 
 a {
   text-decoration: none;
   color: var(--c-brand);
+}
+
+code {
+  --at-apply: font-mono;
 }

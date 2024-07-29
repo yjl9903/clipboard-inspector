@@ -7,7 +7,7 @@ import now from '~build/time';
     <main class="main pt-4vh lt-lg:pt-4vh pb-8vh flex-grow-1">
       <a href="/" class="block select-none cursor-pointer">
         <!-- prettier-ignore -->
-        <h1 class="inline-block font-quicksand text-3xl font-700 hover:underline underline-dotted">Clipboard Inspector</h1>
+        <h1 class="text-gradient inline-block font-quicksand text-3xl font-700 hover:underline underline-dotted">Clipboard Inspector</h1>
       </a>
       <Inspector class="mt-4vh"></Inspector>
     </main>
@@ -31,24 +31,7 @@ import now from '~build/time';
 </template>
 
 <style scoped>
-:root {
-  /* --accent: 124, 58, 237; */
-  --accent: 0, 204, 170;
-  --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), /* #da62c4 30%, */ #08c, white 60%);
 
-  --color-bg-primary: #fcfcfc;
-  --color-bg-secondary: #fafafa;
-}
-
-html {
-  background-color: var(--color-bg-primary);
-
-  --at-apply: font-sans;
-}
-
-code {
-  --at-apply: font-mono;
-}
 
 .main {
   /* prettier-ignore */
