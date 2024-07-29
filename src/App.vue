@@ -13,26 +13,31 @@ import now from '~build/time';
     </main>
     <footer class="main pb-4vh select-none">
       <div font-sm text-base-400>
+        <span class="mr1 text-sm i-carbon-update-now op-80"></span>
+        <span>Built at {{ now.toLocaleString('zh-CN', { timeZone: 'Asia/ShangHai' }) }}</span>
+      </div>
+      <div font-sm text-base-400>
+        <span class="mr1 text-sm i-devicon-github op-80"></span>
         <a
           href="https://github.com/yjl9903/clipboard-inspector"
           target="_blank"
           class="text-link-active"
-          >XLor</a
+          >yjl9903/clipboard-inspector</a
         >
-        <span> © 2023</span>
       </div>
       <div font-sm text-base-400>
-        Rendered at {{ now.toLocaleString('zh-CN', { timeZone: 'Asia/ShangHai' }) }}
+        <span class="mr1 text-sm i-devicon-cloudflare op-80"></span>
+        <span
+          >Hosted on&nbsp;<a class="text-link-active" href="https://cloudflare.com" target="_blank"
+            >Cloudflare</a
+          ></span
+        >
       </div>
-      <div font-sm text-base-400>Powered by Vue</div>
-      <div font-sm text-base-400>Hosted on Cloudflare Pages</div>
     </footer>
   </div>
 </template>
 
 <style scoped>
-
-
 .main {
   /* prettier-ignore */
   --at-apply: mx-auto mx-w-[68vw] lg:w-4xl md:w-[46rem] lt-md:mx-w-[90vw] lt-md:w-[90vw];

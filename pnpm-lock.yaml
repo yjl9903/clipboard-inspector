@@ -21,6 +21,12 @@ importers:
         specifier: ^2.2.4
         version: 2.2.4(ace-builds@1.35.4)(vue@3.4.34(typescript@5.5.4))
     devDependencies:
+      '@iconify-json/carbon':
+        specifier: ^1.1.36
+        version: 1.1.36
+      '@iconify-json/devicon':
+        specifier: ^1.1.49
+        version: 1.1.49
       '@onekuma/preset.css':
         specifier: ^0.1.11
         version: 0.1.11
@@ -346,6 +352,12 @@ packages:
     engines: {node: '>=12'}
     cpu: [x64]
     os: [win32]
+
+  '@iconify-json/carbon@1.1.36':
+    resolution: {integrity: sha512-NC3VcqLtwLZpi7+LeXj+99/byv+asrnCQxiDNCZV6hKr9WcNh6C25kJguJYfN+dV54kOkw78e+6PitQi2Bppnw==}
+
+  '@iconify-json/devicon@1.1.49':
+    resolution: {integrity: sha512-q53rzEhRZBxHtYT3mE13BKPq+5MS5rR8M1k8OoIjWf5FT8R6VjxgvFFLCUQOYSeLc8Pp9uDDZmV7j7OOh+/bFQ==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -1701,6 +1713,14 @@ snapshots:
 
   '@esbuild/win32-x64@0.21.5':
     optional: true
+
+  '@iconify-json/carbon@1.1.36':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/devicon@1.1.49':
+    dependencies:
+      '@iconify/types': 2.0.0
 
   '@iconify/types@2.0.0': {}
 

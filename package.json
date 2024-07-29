@@ -16,6 +16,8 @@
     "vue3-ace-editor": "^2.2.4"
   },
   "devDependencies": {
+    "@iconify-json/carbon": "^1.1.36",
+    "@iconify-json/devicon": "^1.1.49",
     "@onekuma/preset.css": "^0.1.11",
     "@types/node": "^20.14.13",
     "@unocss/reset": "^0.61.6",
