@@ -5,7 +5,7 @@
 
 Inspect your Clipboard. Go to [inspector](https://clipboard-inspector.onekuma.cn/).
 
-![home](./home.png)
+![home](https://github.com/yjl9903/clipboard-inspector/blob/main/public/home.png?raw=true)
 
 ## License
 
