@@ -16,7 +16,7 @@ watch(
   ([type, content]) => {
     if (type === 'text/html') {
       lang.value = 'html';
-      buffer.value = prettify(content, undefined, 100);
+      buffer.value = prettify(content, undefined, 100).trim();
     } else {
       try {
         buffer.value = JSON.stringify(JSON.parse(content), null, 2);
