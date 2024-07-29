@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      html-format:
+        specifier: ^1.1.7
+        version: 1.1.7
       vue:
         specifier: ^3.4.34
         version: 3.4.34(typescript@5.5.4)
@@ -858,6 +861,9 @@ packages:
   he@1.2.0:
     resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
     hasBin: true
+
+  html-format@1.1.7:
+    resolution: {integrity: sha512-ba6woq8dni6HkfRFpsu27PrCM/sxEz9KrVW22xVyMbXsZHbSpJE6Z1gAl7OeqEfU92MKYb9Pn7MnIyqV5tJHKA==}
 
   human-signals@2.1.0:
     resolution: {integrity: sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==}
@@ -2292,6 +2298,8 @@ snapshots:
   has-flag@3.0.0: {}
 
   he@1.2.0: {}
+
+  html-format@1.1.7: {}
 
   human-signals@2.1.0: {}
 
