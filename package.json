@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "ace-builds": "^1.35.4",
+    "diffable-html": "^6.0.1",
     "html-format": "^1.1.7",
     "vue": "^3.4.34",
     "vue3-ace-editor": "^2.2.4"
@@ -19,6 +20,7 @@
     "@iconify-json/carbon": "^1.1.36",
     "@iconify-json/devicon": "^1.1.49",
     "@onekuma/preset.css": "^0.1.11",
+    "@types/diffable-html": "^5.0.2",
     "@types/node": "^20.14.13",
     "@unocss/reset": "^0.61.6",
     "@vitejs/plugin-vue": "^5.1.1",

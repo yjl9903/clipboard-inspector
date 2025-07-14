@@ -11,6 +11,9 @@ importers:
       ace-builds:
         specifier: ^1.35.4
         version: 1.35.4
+      diffable-html:
+        specifier: ^6.0.1
+        version: 6.0.1
       html-format:
         specifier: ^1.1.7
         version: 1.1.7
@@ -30,6 +33,9 @@ importers:
       '@onekuma/preset.css':
         specifier: ^0.1.11
         version: 0.1.11
+      '@types/diffable-html':
+        specifier: ^5.0.2
+        version: 5.0.2
       '@types/node':
         specifier: ^20.14.13
         version: 20.14.13
@@ -497,6 +503,9 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@types/diffable-html@5.0.2':
+    resolution: {integrity: sha512-VS6yWnAFw8Dm1BhrTwt84V5VWbdysOOF32vbCtQJMtJxzpLGAIZ5P+1NfRX0elYluZ70vwPkm9msdrHBB2ijFQ==}
+
   '@types/estree@1.0.5':
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
 
@@ -788,11 +797,34 @@ packages:
   destr@2.0.3:
     resolution: {integrity: sha512-2N3BOUU4gYMpTP24s5rF5iP7BDr7uNTCs4ozw3kf/eKfvWSIu93GEBi5m427YoyJoeOzQ5smuu4nNAPGb8idSQ==}
 
+  diffable-html@6.0.1:
+    resolution: {integrity: sha512-z/AuT6urMKzCl1oz+HalSjjPxPMNKfbnWwzLzx/qWfzTQ3kBL8EnLKSCr2IpOofIpV+BA1Zd+e2eSzxGEQojUw==}
+
+  dom-serializer@1.4.1:
+    resolution: {integrity: sha512-VHwB3KfrcOOkelEG2ZOfxqLZdfkil8PtJi4P8N2MMXucZq2yLp75ClViUlOVwyoHEDjYU433Aq+5zWP61+RGag==}
+
+  domelementtype@2.3.0:
+    resolution: {integrity: sha512-OLETBj6w0OsagBwdXnPdN0cnMfF9opN69co+7ZrbfPGrdpPVNBUj02spi6B1N7wChLQiPn4CSH/zJvXw56gmHw==}
+
+  domhandler@3.3.0:
+    resolution: {integrity: sha512-J1C5rIANUbuYK+FuFL98650rihynUOEzRLxW+90bKZRWB6A1X1Tf82GxR1qAWLyfNPRvjqfip3Q5tdYlmAa9lA==}
+    engines: {node: '>= 4'}
+
+  domhandler@4.3.1:
+    resolution: {integrity: sha512-GrwoxYN+uWlzO8uhUXRl0P+kHE4GtVPfYzVLcUxPL7KNdHKj66vvlhiweIHqYYXWlw+T8iLMp42Lm67ghw4WMQ==}
+    engines: {node: '>= 4'}
+
+  domutils@2.8.0:
+    resolution: {integrity: sha512-w96Cjofp72M5IIhpjgobBimYEfoPjx1Vx0BSX9P30WBdZW2WIKU0T1Bd0kz2eNZ9ikjKgHbEyKx8BB6H1L3h3A==}
+
   duplexer@0.1.2:
     resolution: {integrity: sha512-jtD6YG370ZCIi/9GTaJKQxWTZD045+4R4hTk/x1UyoqadyJ9x9CgSi1RlVDQF8U2sxLLSnFkCaMihqljHIWgMg==}
 
   electron-to-chromium@1.5.2:
     resolution: {integrity: sha512-kc4r3U3V3WLaaZqThjYz/Y6z8tJe+7K0bbjUVo3i+LWIypVdMx5nXCkwRe6SWbY6ILqLdc1rKcKmr3HoH7wjSQ==}
+
+  entities@2.2.0:
+    resolution: {integrity: sha512-p92if5Nz619I0w+akJrLZH0MX0Pb5DX39XOwQTtXSdQQOaYH03S1uIQp4mhOZtAXrxq4ViO67YTiLBo2638o9A==}
 
   entities@4.5.0:
     resolution: {integrity: sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw==}
@@ -892,6 +924,9 @@ packages:
 
   html-format@1.1.7:
     resolution: {integrity: sha512-ba6woq8dni6HkfRFpsu27PrCM/sxEz9KrVW22xVyMbXsZHbSpJE6Z1gAl7OeqEfU92MKYb9Pn7MnIyqV5tJHKA==}
+
+  htmlparser2@5.0.1:
+    resolution: {integrity: sha512-vKZZra6CSe9qsJzh0BjBGXo8dvzNsq/oGvsjfRdOrrryfeD9UOBEEQdeoqCRmKZchF5h2zOBMQ6YuQ0uRUmdbQ==}
 
   human-signals@2.1.0:
     resolution: {integrity: sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==}
@@ -1833,6 +1868,8 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.19.1':
     optional: true
 
+  '@types/diffable-html@5.0.2': {}
+
   '@types/estree@1.0.5': {}
 
   '@types/node@20.14.13':
@@ -2225,9 +2262,37 @@ snapshots:
 
   destr@2.0.3: {}
 
+  diffable-html@6.0.1:
+    dependencies:
+      htmlparser2: 5.0.1
+
+  dom-serializer@1.4.1:
+    dependencies:
+      domelementtype: 2.3.0
+      domhandler: 4.3.1
+      entities: 2.2.0
+
+  domelementtype@2.3.0: {}
+
+  domhandler@3.3.0:
+    dependencies:
+      domelementtype: 2.3.0
+
+  domhandler@4.3.1:
+    dependencies:
+      domelementtype: 2.3.0
+
+  domutils@2.8.0:
+    dependencies:
+      dom-serializer: 1.4.1
+      domelementtype: 2.3.0
+      domhandler: 4.3.1
+
   duplexer@0.1.2: {}
 
   electron-to-chromium@1.5.2: {}
+
+  entities@2.2.0: {}
 
   entities@4.5.0: {}
 
@@ -2349,6 +2414,13 @@ snapshots:
   he@1.2.0: {}
 
   html-format@1.1.7: {}
+
+  htmlparser2@5.0.1:
+    dependencies:
+      domelementtype: 2.3.0
+      domhandler: 3.3.0
+      domutils: 2.8.0
+      entities: 2.2.0
 
   human-signals@2.1.0: {}
 
