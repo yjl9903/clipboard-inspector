@@ -1,4 +1,4 @@
-import * as path from 'path';
+import * as path from 'node:path';
 
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
@@ -14,13 +14,13 @@ import Analytics from 'unplugin-analytics/vite';
 export default defineConfig({
   resolve: {
     alias: {
-      '~/': `${path.resolve(__dirname, 'src')}/`
+      '~/': `${path.resolve(import.meta.dirname, 'src')}/`
     }
   },
   plugins: [
     vue(),
     AutoImport({
-      imports: ['vue', 'vue/macros'],
+      imports: ['vue'],
       dirs: ['./src/composables/**'],
       vueTemplate: true,
       dts: './src/auto-imports.d.ts'
